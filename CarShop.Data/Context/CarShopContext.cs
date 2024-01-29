@@ -6,12 +6,13 @@ public class CarShopContext(DbContextOptions<CarShopContext> builder) : DbContex
     public DbSet<Category> Categories { get; set; }
     public DbSet<Car> Cars { get; set; }
     public DbSet<Make> Makes { get; set; }
-    public DbSet<Year> Years { get; set; }
-    public DbSet<Price> Prices { get; set; }
-    public DbSet<Mileage> Mileages { get; set; }
     public DbSet<Model> Models { get; set; }
     public DbSet<Color> Colors { get; set; }
+    public DbSet<Filter> Filters { get; set; }
     public DbSet<CarColor> CarColors { get; set; }
+    public DbSet<CarCategory> CarCategories { get; set; }
+    public DbSet<CarFilter> CarFilters { get; set; }
+
 
 
     protected override void OnModelCreating(ModelBuilder builder)
