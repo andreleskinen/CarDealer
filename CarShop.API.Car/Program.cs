@@ -45,9 +45,9 @@ void RegisterEndpoints()
 {
     //app.AddEndpoint<CarCategory, CarCategoryDTO>();   
     app.AddEndpoint<Car, CarPostDTO, CarPutDTO, CarGetDTO>();
-    app.AddEndpoint<CarCategory, CarCategoryPostDTO, CarCategoryPutDTO, CarCategoryGetDTO>();
-    app.AddEndpoint<CarColor, CarColorPostDTO, CarColorPutDTO, CarColorGetDTO>();
-    app.AddEndpoint<CarFilter, CarFilterPostDTO, CarFilterPutDTO, CarFilterGetDTO>();
+    app.AddEndpoint<CarCategory, CarCategoryDTO>();
+    app.AddEndpoint<CarColor, CarColorDTO>();
+    app.AddEndpoint<CarFilter, CarFilterDTO>();
     app.AddEndpoint<Category, CategoryPostDTO, CategoryPutDTO, CategoryGetDTO>();
     app.AddEndpoint<Color, ColorPostDTO, ColorPutDTO, ColorGetDTO>();
     app.AddEndpoint<Filter, FilterPostDTO, FilterPutDTO, FilterGetDTO>();
