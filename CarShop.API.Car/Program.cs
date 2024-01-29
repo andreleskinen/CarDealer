@@ -1,3 +1,5 @@
+using CarShop.API.DTO.DTOs;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -41,8 +43,23 @@ app.Run();
 
 void RegisterEndpoints()
 {
-    //app.AddEndpoint<CarCategory, CarCategoryDTO>();   
     app.AddEndpoint<Car, CarPostDTO, CarPutDTO, CarGetDTO>();
+    app.AddEndpoint<CarCategory, CarCategoryDTO>();
+    app.AddEndpoint<CarColor, CarColorDTO>();
+    app.AddEndpoint<CarFilter, CarFilterDTO>();
+    app.AddEndpoint<Category, CategoryPostDTO, CategoryPutDTO, CategoryGetDTO>();
+    app.AddEndpoint<Color, ColorPostDTO, ColorPutDTO, ColorGetDTO>();
+    app.AddEndpoint<Filter, FilterPostDTO, FilterPutDTO, FilterGetDTO>();
+    app.AddEndpoint<Make, MakePostDTO, MakePutDTO, MakeGetDTO>();
+    app.AddEndpoint<Mileage, MileagePostDTO, MileagePutDTO, MileageGetDTO>();
+    app.AddEndpoint<Model, ModelPostDTO, ModelPutDTO, ModelGetDTO>();
+    app.AddEndpoint<Price, PricePostDTO, PricePutDTO, PriceGetDTO>();
+    app.AddEndpoint<Year, YearPostDTO, YearPutDTO, YearGetDTO>();
+
+
+
+
+
     /*app.MapGet($"/api/categorieswithdata", async (IDbService db) =>
     {
         try
