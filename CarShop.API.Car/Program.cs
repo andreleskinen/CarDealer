@@ -41,7 +41,6 @@ app.Run();
 
 void RegisterEndpoints()
 {
-    //app.AddEndpoint<CarCategory, CarCategoryDTO>();   
     app.AddEndpoint<Car, CarPostDTO, CarPutDTO, CarGetDTO>();
     app.AddEndpoint<CarCategory, CarCategoryPostDTO, CarCategoryPutDTO, CarCategoryGetDTO>();
     app.AddEndpoint<CarColor, CarColorPostDTO, CarColorPutDTO, CarColorGetDTO>();
