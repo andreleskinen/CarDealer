@@ -22,8 +22,11 @@ public class CarShopContext(DbContextOptions<CarShopContext> builder) : DbContex
         builder.Entity<Car>()
             .HasKey(cb => cb.Id);
 
+        builder.Entity<CarCategory>()
+            .HasKey(cc1 => new { cc1.CarId, cc1.CategoryId });
+
         builder.Entity<CarColor>()
-            .HasKey(cc => new { cc.CarId, cc.ColorId });
+            .HasKey(cc2 => new { cc2.CarId, cc2.ColorId });
 
         builder.Entity<CarFilter>()
             .HasKey(cf => new { cf.CarId, cf.FilterId });
@@ -33,6 +36,9 @@ public class CarShopContext(DbContextOptions<CarShopContext> builder) : DbContex
 
         builder.Entity<Color>()
             .HasKey(cm2 => cm2.Id );
+
+        builder.Entity<Filter>()
+            .HasKey(f => f.Id);
 
         builder.Entity<Make>()
             .HasKey(cm3 => cm3.Id );
