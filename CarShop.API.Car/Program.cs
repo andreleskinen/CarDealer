@@ -53,7 +53,8 @@ void RegisterEndpoints()
     app.AddEndpoint<Filter, FilterPostDTO, FilterPutDTO, FilterGetDTO>();
     app.AddEndpoint<Make, MakePostDTO, MakePutDTO, MakeGetDTO>();
     app.AddEndpoint<Model, ModelPostDTO, ModelPutDTO, ModelGetDTO>();
-
+    */
+    
 
 
 
