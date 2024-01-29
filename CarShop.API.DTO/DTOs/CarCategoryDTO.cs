@@ -1,7 +1,14 @@
 ﻿namespace CarShop.API.DTO;
 
-public class CarCategoryDTO
+public class CarCategoryPostDTO
 {
-    public int CarId { get; set; }
-    public int CategoryId { get; set; }
+    public string Name { get; set; } = string.Empty;
+}
+public class CarCategoryPutDTO : CarCategoryPostDTO
+{
+    public int Id { get; set; }
+}
+public class CarCategoryGetDTO : CarCategoryPutDTO
+{
+    //public List<FilterGetDTO>? Filters { get; set; }
 }
