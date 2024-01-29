@@ -51,11 +51,7 @@ void RegisterEndpoints()
     app.AddEndpoint<Color, ColorPostDTO, ColorPutDTO, ColorGetDTO>();
     app.AddEndpoint<Filter, FilterPostDTO, FilterPutDTO, FilterGetDTO>();
     app.AddEndpoint<Make, MakePostDTO, MakePutDTO, MakeGetDTO>();
-    app.AddEndpoint<Mileage, MileagePostDTO, MileagePutDTO, MileageGetDTO>();
     app.AddEndpoint<Model, ModelPostDTO, ModelPutDTO, ModelGetDTO>();
-    app.AddEndpoint<Price, PricePostDTO, PricePutDTO, PriceGetDTO>();
-    app.AddEndpoint<Year, YearPostDTO, YearPutDTO, YearGetDTO>();
-
 
 
 
