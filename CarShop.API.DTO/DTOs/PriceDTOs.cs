@@ -14,7 +14,7 @@ public class PricePutDTO : PricePostDTO
 {
     public int Id { get; set; }
 }
-public class PiceGetDTO : PricePutDTO
+public class PriceGetDTO : PricePutDTO
 {
     //public List<FilterGetDTO>? Filters { get; set; }
 }
