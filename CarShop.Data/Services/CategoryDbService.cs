@@ -5,7 +5,7 @@ using CarShop.API.DTO;
 
 namespace CarShop.Data.Services;
 
-public class CarDbService(CarShopContext db, IMapper mapper) : DbService(db, mapper)
+public class CategoryDbService(CarShopContext db, IMapper mapper) : DbService(db, mapper)
 {
     public override async Task<List<TDto>> GetAsync<TEntity, TDto>()
     {
@@ -14,10 +14,10 @@ public class CarDbService(CarShopContext db, IMapper mapper) : DbService(db, map
         return await base.GetAsync<TEntity, TDto>();
     }
 
-    public async Task<List<CarGetDTO>> GetCategoriesWithAllRelatedDataAsync() // CategoryGetDTO
+    /*public async Task<List<CarGetDTO>> GetCategoriesWithAllRelatedDataAsync() // CategoryGetDTO
     {
-        IncludeNavigationsFor<Filter>();
-        IncludeNavigationsFor<Product>();  //vi behöver skapa product entitet
+        //IncludeNavigationsFor<Filter>();
+        //IncludeNavigationsFor<Car>();
         var categories = await base.GetAsync<Category, CarGetDTO>(); // CategoryGetDTO
 
         foreach (var category in categories)
@@ -47,5 +47,5 @@ public class CarDbService(CarShopContext db, IMapper mapper) : DbService(db, map
         }
 
         return categories;
-    }
+    }*/
 }

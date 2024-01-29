@@ -29,7 +29,7 @@ public class CarShopContext(DbContextOptions<CarShopContext> builder) : DbContex
             .HasKey(cf => new { cf.CarId, cf.FilterId });
 
         builder.Entity<Category>()
-            .HasKey(cm1 => cm1.CategoryId );
+            .HasKey(cm1 => cm1.Id );
 
         builder.Entity<Color>()
             .HasKey(cm2 => cm2.Id );

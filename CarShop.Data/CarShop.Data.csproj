@@ -27,8 +27,4 @@
 		<ProjectReference Include="..\CarShop.API.DTO\CarShop.API.DTO.csproj" />
 		<ProjectReference Include="..\CarShop.Data.Shared\CarShop.Data.Shared.csproj" />
 	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Entities\" />
-	</ItemGroup>
 </Project>

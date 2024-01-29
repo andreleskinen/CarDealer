@@ -59,16 +59,16 @@ void RegisterEndpoints()
 void RegisterServices()
 {
     ConfigureAutoMapper();
-    builder.Services.AddScoped<IDbService, CarDbService>();
+    builder.Services.AddScoped<IDbService, CategoryDbService>();
 }
 void ConfigureAutoMapper()
 {
     var config = new MapperConfiguration(cfg =>
     {
-        cfg.CreateMap<Car, CarPostDTO>().ReverseMap();
-        cfg.CreateMap<Car, CarPutDTO>().ReverseMap();
-        cfg.CreateMap<Car, CarGetDTO>().ReverseMap();
-        cfg.CreateMap<Car, CarSmallGetDTO>().ReverseMap();
+        cfg.CreateMap<Category, CategoryPostDTO>().ReverseMap();
+        cfg.CreateMap<Category, CategoryPutDTO>().ReverseMap();
+        cfg.CreateMap<Category, CategoryGetDTO>().ReverseMap();
+        cfg.CreateMap<Category, CategorySmallGetDTO>().ReverseMap();
         cfg.CreateMap<CarCategory, CarCategoryDTO>().ReverseMap(); //Måste skapa en entitet som heter ProductCategory
         /*
         cfg.CreateMap<Filter, FilterGetDTO>().ReverseMap();
