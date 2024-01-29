@@ -44,17 +44,8 @@ public class CarShopContext(DbContextOptions<CarShopContext> builder) : DbContex
         builder.Entity<Make>()
             .HasKey(cm3 => cm3.Id );
 
-        builder.Entity<Mileage>()
-            .HasKey(cp => cp.Id );
-
         builder.Entity<Model>()
             .HasKey(cpy => cpy.Id );
-
-        builder.Entity<Price>()
-            .HasKey(cpi => cpi.Id);
-
-        builder.Entity<Year>()
-            .HasKey(cp4 => cp4.Id);
 
 
         #endregion
