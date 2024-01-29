@@ -10,10 +10,14 @@ public class Car : IEntity
     public List<CarColor> CarColors { get; set; }
     public List<Color> Colors { get; set; }
 
+    public int MakeId { get; set; }
     public Make Make { get; set; }
-    public Year Year { get; set; }
-    public Price Price { get; set; }
-    public Mileage Mileage { get; set; }
+
+    public int Year { get; set; }
+    public double Price { get; set; }
+    public int Mileage { get; set; }
+
+    public int ModelId { get; set; }
     public Model Model { get; set; }
     public OptionType OptionTypes { get; set; }
     public CarType CarType { get; set; }
