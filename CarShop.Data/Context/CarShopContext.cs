@@ -20,8 +20,6 @@ public class CarShopContext(DbContextOptions<CarShopContext> builder) : DbContex
         base.OnModelCreating(builder);
 
         #region Composite Keys
-        builder.Entity<Car>()
-            .HasKey(cb => cb.Id);
 
         builder.Entity<CarCategory>()
             .HasKey(cc1 => new { cc1.CarId, cc1.CategoryId });
@@ -32,21 +30,6 @@ public class CarShopContext(DbContextOptions<CarShopContext> builder) : DbContex
         builder.Entity<CategoryFilter>()
             .HasKey(cf => new { cf.CategoryId, cf.FilterId });
 
-        builder.Entity<Category>()
-            .HasKey(cm1 => cm1.Id );
-
-        builder.Entity<Color>()
-            .HasKey(cm2 => cm2.Id );
-
-        builder.Entity<Filter>()
-            .HasKey(f => f.Id);
-
-        builder.Entity<Make>()
-            .HasKey(cm3 => cm3.Id );
-
-        builder.Entity<Model>()
-            .HasKey(cpy => cpy.Id );
-
 
         #endregion
 
@@ -55,6 +38,13 @@ public class CarShopContext(DbContextOptions<CarShopContext> builder) : DbContex
             .HasMany(c => c.Colors)
             .WithMany(c => c.Cars)
             .UsingEntity<CarColor>();
+        #endregion
+
+        #region CarCategory Many-to-Many Relationship
+        builder.Entity<Car>()
+            .HasMany(c => c.Categories)
+            .WithMany(c => c.Cars)
+            .UsingEntity<CarCategory>();
         #endregion
 
         #region CarFilter Many-to-Many Relationship

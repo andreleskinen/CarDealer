@@ -4,6 +4,7 @@ using CarShop.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarShop.Data.Migrations
 {
     [DbContext(typeof(CarShopContext))]
-    partial class CarShopContextModelSnapshot : ModelSnapshot
+    [Migration("20240130140907_inital2")]
+    partial class inital2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,6 +24,21 @@ namespace CarShop.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("CarCategory", b =>
+                {
+                    b.Property<int>("CarsId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CategoriesId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CarsId", "CategoriesId");
+
+                    b.HasIndex("CategoriesId");
+
+                    b.ToTable("CarCategory");
+                });
 
             modelBuilder.Entity("CarShop.Data.Entities.Car", b =>
                 {
@@ -30,29 +48,29 @@ namespace CarShop.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("CarType")
+                    b.Property<int>("CarType")
                         .HasColumnType("int");
 
-                    b.Property<int?>("MakeId")
+                    b.Property<int>("MakeId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Mileage")
+                    b.Property<int>("Mileage")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ModelId")
+                    b.Property<int>("ModelId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("OptionTypes")
+                    b.Property<int>("OptionTypes")
                         .HasColumnType("int");
 
-                    b.Property<double?>("Price")
+                    b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<int?>("Year")
+                    b.Property<int>("Year")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -73,8 +91,6 @@ namespace CarShop.Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("CarId", "CategoryId");
-
-                    b.HasIndex("CategoryId");
 
                     b.ToTable("CarCategories");
                 });
@@ -209,34 +225,38 @@ namespace CarShop.Data.Migrations
                     b.ToTable("Models");
                 });
 
-            modelBuilder.Entity("CarShop.Data.Entities.Car", b =>
-                {
-                    b.HasOne("CarShop.Data.Entities.Make", "Make")
-                        .WithMany("Cars")
-                        .HasForeignKey("MakeId");
-
-                    b.HasOne("CarShop.Data.Entities.Model", "Model")
-                        .WithMany()
-                        .HasForeignKey("ModelId");
-
-                    b.Navigation("Make");
-
-                    b.Navigation("Model");
-                });
-
-            modelBuilder.Entity("CarShop.Data.Entities.CarCategory", b =>
+            modelBuilder.Entity("CarCategory", b =>
                 {
                     b.HasOne("CarShop.Data.Entities.Car", null)
                         .WithMany()
-                        .HasForeignKey("CarId")
+                        .HasForeignKey("CarsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("CarShop.Data.Entities.Category", null)
                         .WithMany()
-                        .HasForeignKey("CategoryId")
+                        .HasForeignKey("CategoriesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("CarShop.Data.Entities.Car", b =>
+                {
+                    b.HasOne("CarShop.Data.Entities.Make", "Make")
+                        .WithMany("Cars")
+                        .HasForeignKey("MakeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CarShop.Data.Entities.Model", "Model")
+                        .WithMany()
+                        .HasForeignKey("ModelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Make");
+
+                    b.Navigation("Model");
                 });
 
             modelBuilder.Entity("CarShop.Data.Entities.CarColor", b =>
