@@ -8,7 +8,7 @@ public class Filter : IEntity
     public string TypeName { get; set; }
     public OptionType OptionType { get; set; }
     public CarType CarType { get; set; }   
-    public List<Car> Cars { get; set; }
+    public List<Category> Categories { get; set; }
 
 }
 

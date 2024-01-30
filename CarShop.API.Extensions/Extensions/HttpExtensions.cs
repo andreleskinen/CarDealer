@@ -78,7 +78,7 @@ public static class HttpExtensions
     {
         try
         {
-            var entity = await db .AddAsync<TEntity, TPostDto>(dto);
+            var entity = await db.AddAsync<TEntity, TPostDto>(dto);
             if (await db.SaveChangesAsync())
             {
                 var node = typeof(TEntity).Name.ToLower();

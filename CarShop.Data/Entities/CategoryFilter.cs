@@ -1,9 +1,9 @@
 ﻿using System;
 namespace CarShop.Data.Entities;
 
-public class CarFilter
+public class CategoryFilter
 {
     public int FilterId { get; set; }
-    public int CarId { get; set; }
+    public int CategoryId { get; set; }
 }
 

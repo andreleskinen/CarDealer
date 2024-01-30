@@ -11,7 +11,7 @@ public class CarShopContext(DbContextOptions<CarShopContext> builder) : DbContex
     public DbSet<Filter> Filters { get; set; }
     public DbSet<CarColor> CarColors { get; set; }
     public DbSet<CarCategory> CarCategories { get; set; }
-    public DbSet<CarFilter> CarFilters { get; set; }
+    public DbSet<CategoryFilter> CategoryFilters { get; set; }
 
 
 
@@ -29,8 +29,8 @@ public class CarShopContext(DbContextOptions<CarShopContext> builder) : DbContex
         builder.Entity<CarColor>()
             .HasKey(cc2 => new { cc2.CarId, cc2.ColorId });
 
-        builder.Entity<CarFilter>()
-            .HasKey(cf => new { cf.CarId, cf.FilterId });
+        builder.Entity<CategoryFilter>()
+            .HasKey(cf => new { cf.CategoryId, cf.FilterId });
 
         builder.Entity<Category>()
             .HasKey(cm1 => cm1.Id );
@@ -58,10 +58,10 @@ public class CarShopContext(DbContextOptions<CarShopContext> builder) : DbContex
         #endregion
 
         #region CarFilter Many-to-Many Relationship
-        builder.Entity<Car>()
+        builder.Entity<Category>()
             .HasMany(c => c.Filters)
-            .WithMany(f => f.Cars)
-            .UsingEntity<CarFilter>();
+            .WithMany(f => f.Categories)
+            .UsingEntity<CategoryFilter>();
         #endregion
     }
 }
