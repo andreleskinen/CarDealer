@@ -31,3 +31,11 @@
         content: "An error has occurred."
     }
 
+.bi.bi-cart 
+{
+    font-size: 8.5rem !important; /* Ändrar storlek på vagnen */
+}
+header div img /* ändrar storlek på ALLA bilder som ligger i ALLA divs och ALLA headers */
+{
+    height: 30px; 
+}
