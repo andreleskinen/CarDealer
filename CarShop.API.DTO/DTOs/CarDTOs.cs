@@ -12,4 +12,6 @@ public class CarGetDTO : CarPutDTO
 {
     //public List<FilterGetDTO>? Filters { get; set; }
 }
-
+public class CarSmallGetDTO : CarPutDTO
+{
+}

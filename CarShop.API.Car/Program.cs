@@ -43,16 +43,18 @@ app.Run();
 
 void RegisterEndpoints()
 {
-    app.AddEndpoint<Car, CarPostDTO, CarPutDTO, CarGetDTO>();
-    
-    //app.AddEndpoint<CarCategory, CarCategoryDTO>();
-    //app.AddEndpoint<CarColor, CarColorDTO>();
-    //app.AddEndpoint<CategoryFilter, CategoryFilterDTO>();
-    //app.AddEndpoint<Category, CategoryPostDTO, CategoryPutDTO, CategoryGetDTO>();
-    //app.AddEndpoint<Color, ColorPostDTO, ColorPutDTO, ColorGetDTO>();
-    //app.AddEndpoint<Filter, FilterPostDTO, FilterPutDTO, FilterGetDTO>();
-    //app.AddEndpoint<Make, MakePostDTO, MakePutDTO, MakeGetDTO>();
-    //app.AddEndpoint<Model, ModelPostDTO, ModelPutDTO, ModelGetDTO>();
+    app.AddEndpoint<Category, CategoryPostDTO, CategoryPutDTO, CategoryGetDTO>();
+    //app.AddEndpoint<Car, CarPostDTO, CarPutDTO, CarGetDTO>();
+    app.AddEndpoint<CarCategory, CarCategoryDTO>();
+    /*
+    app.AddEndpoint<CarColor, CarColorDTO>();
+    app.AddEndpoint<CategoryFilter, CategoryFilterDTO>();
+    app.AddEndpoint<Category, CategoryPostDTO, CategoryPutDTO, CategoryGetDTO>();
+    app.AddEndpoint<Color, ColorPostDTO, ColorPutDTO, ColorGetDTO>();
+    app.AddEndpoint<Filter, FilterPostDTO, FilterPutDTO, FilterGetDTO>();
+    app.AddEndpoint<Make, MakePostDTO, MakePutDTO, MakeGetDTO>();
+    app.AddEndpoint<Model, ModelPostDTO, ModelPutDTO, ModelGetDTO>();
+    */
     
     
 
@@ -77,6 +79,7 @@ void RegisterServices()
     ConfigureAutoMapper();
     builder.Services.AddScoped<IDbService, DbService>();
 }
+
 void ConfigureAutoMapper()
 {
     var config = new MapperConfiguration(cfg =>
@@ -84,7 +87,10 @@ void ConfigureAutoMapper()
         cfg.CreateMap<Car, CarPostDTO>().ReverseMap();
         cfg.CreateMap<Car, CarPutDTO>().ReverseMap();
         cfg.CreateMap<Car, CarGetDTO>().ReverseMap();
+        cfg.CreateMap<Car, CarSmallGetDTO>().ReverseMap();
         cfg.CreateMap<CarCategory, CarCategoryDTO>().ReverseMap();
+
+
         /*
         cfg.CreateMap<Filter, FilterGetDTO>().ReverseMap();
         cfg.CreateMap<Size, OptionDTO>().ReverseMap();
@@ -94,4 +100,7 @@ void ConfigureAutoMapper()
     var mapper = config.CreateMapper();
     builder.Services.AddSingleton(mapper);
 }
+
+
+
 
