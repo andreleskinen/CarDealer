@@ -1,6 +1,8 @@
 
 
 using CarShop.API.DTO;
+using CarShop.API.DTO.DTOs;
+using System.Drawing;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -81,13 +83,16 @@ void ConfigureAutoMapper()
         cfg.CreateMap<Category, CategoryPutDTO>().ReverseMap();
         cfg.CreateMap<Category, CategoryGetDTO>().ReverseMap();
         cfg.CreateMap<Category, CategorySmallGetDTO>().ReverseMap();
+        
+
         //cfg.CreateMap<CarCategory, CarCategoryDTO>().ReverseMap();
         /*
         cfg.CreateMap<Filter, FilterGetDTO>().ReverseMap();
         cfg.CreateMap<Size, OptionDTO>().ReverseMap();
         cfg.CreateMap<Color, OptionDTO>().ReverseMap();
         */
-    });
+    })
+    
     var mapper = config.CreateMapper();
     builder.Services.AddSingleton(mapper);
 }

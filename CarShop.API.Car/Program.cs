@@ -43,10 +43,10 @@ app.Run();
 
 void RegisterEndpoints()
 {
-    app.AddEndpoint<Category, CategoryPostDTO, CategoryPutDTO, CategoryGetDTO>();
-    //app.AddEndpoint<Car, CarPostDTO, CarPutDTO, CarGetDTO>();
+    
+    app.AddEndpoint<Car, CarPostDTO, CarPutDTO, CarGetDTO>();
     app.AddEndpoint<CarCategory, CarCategoryDTO>();
-    /*
+    
     app.AddEndpoint<CarColor, CarColorDTO>();
     app.AddEndpoint<CategoryFilter, CategoryFilterDTO>();
     app.AddEndpoint<Category, CategoryPostDTO, CategoryPutDTO, CategoryGetDTO>();
@@ -54,7 +54,7 @@ void RegisterEndpoints()
     app.AddEndpoint<Filter, FilterPostDTO, FilterPutDTO, FilterGetDTO>();
     app.AddEndpoint<Make, MakePostDTO, MakePutDTO, MakeGetDTO>();
     app.AddEndpoint<Model, ModelPostDTO, ModelPutDTO, ModelGetDTO>();
-    */
+    
     
     
 
@@ -89,6 +89,19 @@ void ConfigureAutoMapper()
         cfg.CreateMap<Car, CarGetDTO>().ReverseMap();
         cfg.CreateMap<Car, CarSmallGetDTO>().ReverseMap();
         cfg.CreateMap<CarCategory, CarCategoryDTO>().ReverseMap();
+        cfg.CreateMap<CarColor, CarColorDTO>().ReverseMap();
+        cfg.CreateMap<Color, ColorPostDTO>().ReverseMap();
+        cfg.CreateMap<Color, ColorPutDTO>().ReverseMap();
+        cfg.CreateMap<Color, ColorGetDTO>().ReverseMap();
+        cfg.CreateMap<Filter, FilterPostDTO>().ReverseMap();
+        cfg.CreateMap<Filter, FilterPutDTO>().ReverseMap();
+        cfg.CreateMap<Filter, FilterGetDTO>().ReverseMap();
+        cfg.CreateMap<Make, MakePostDTO>().ReverseMap();
+        cfg.CreateMap<Make, MakePutDTO>().ReverseMap();
+        cfg.CreateMap<Make, MakeGetDTO>().ReverseMap();
+        cfg.CreateMap<Model, ModelPostDTO>().ReverseMap();
+        cfg.CreateMap<Model, ModelPutDTO>().ReverseMap();
+        cfg.CreateMap<Model, ModelGetDTO>().ReverseMap();
 
 
         /*
