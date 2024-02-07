@@ -31,11 +31,33 @@
         content: "An error has occurred."
     }
 
-.bi.bi-cart 
-{
-    font-size: 8.5rem !important; /* Ändrar storlek på vagnen */
+
+header {
+    height: 150px; /* Ändrar höjden  headern till 150px */
+    padding: 10px 20px; /* skapae utrymme runt innehållet */
+    display: flex; /*flex box design som gör det enklare att designa*/
+    justify-content: space-between; /*fördelar utrymmet */
+    align-items: center;/*centrerar*/
 }
-header div img /* ändrar storlek på ALLA bilder som ligger i ALLA divs och ALLA headers */
-{
-    height: 30px; 
+
+.navbar-nav a {
+    text-decoration: none;
+    font-size: 20px; /* Textstorlek för navigeringslänkarna */
+    margin: 0 10px; /* Avstånd mellan navigeringslänkarna */
 }
+
+.contact {
+    margin-left: auto;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    height: 100%; /* Fyller hela höjden av navigeringsbaren */
+    box-sizing: border-box; /* Inkludera padding i höjden och bredden */
+}
+
+.phonenr {
+    color: white;
+    margin: 0;
+}
+

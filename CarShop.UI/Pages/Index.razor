@@ -1,24 +1,28 @@
 ﻿@page "/"
 
-
-<i class="bi bi-cart fs-1"> </i> <!-- fs-1 förstorar/förminskar text/objekt -->
-<h1> 
-    Shoppa nu <i class="bi bi-cart"> </i>
-</h1> 
-
-
-<i class="bi bi-cart"> </i>
-
-<header class="d-flex justify-content-between mx-3 my-1"> <!-- justify-content-between gör att det skapas mellanrum mellan div typerna. 
-                                                          mx-3 gör att logo och cart flyttar in 3 steg närmre mot mitten i x-axel.
-                                                          my-1 flyttar något i y-axeln 1 steg nedåt. -->
-    <div>Logo</div>
-    <div>Search</div>
-    <div>Cart</div>
+<header class="d-flex d-flex justify-content-between m-3">
+    <div><img src="/Images/LogoCarShop.png" alt="CarLogo" style=" height:100px;"</div>
+    <div>
+        <nav class="navbar navbar-expand-lg bg-white">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="#">Hem</a>
+                        <a class="nav-link" href="#">Bilar till salu</a>
+                        <a class="nav-link" href="#">Tjänster</a>
+                        <a class="nav-link" href="#">Om oss</a>
+                        <a class="nav-link" href="#">Kontakta oss</a>
+                        <a class="nav-link" href="#">Kundrecensioner</a>
+                        <a class="nav-link" href="#">FAQ</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="contact">
+        <p class="phonenr">123-456-78-90</p>
+    </div>
 </header>
-
-
-<i class="bi bi-cart"></i>
-<div>div 1</div>
-<div class="m-3 p-2"> Hej Josef!</div>
-<div>div 3</div>
