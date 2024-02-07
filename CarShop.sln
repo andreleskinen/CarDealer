@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarShop.API.DTO", "CarShop.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarShop.UI", "CarShop.UI\CarShop.UI.csproj", "{2E079537-E08E-4765-985F-481559DEB4C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarShop.API.Category", "CarShop.API.Category\CarShop.API.Category.csproj", "{159AE69A-090B-4B59-9E3A-E7B8E4D36FCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarShop.API.Category", "CarShop.API.Category\CarShop.API.Category.csproj", "{159AE69A-090B-4B59-9E3A-E7B8E4D36FCB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
