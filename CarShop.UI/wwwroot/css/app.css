@@ -171,9 +171,9 @@ header {
     padding-top: 35px; /* Creating some space between the text and the beginning of the footer */
 }
 .logo-pics img {
-    width: 10px;
-    height: auto; 
-    margin-right: 10px; 
+    width: 50px;
+    height: auto;
+    margin-right: 3px;
 }
 
 
