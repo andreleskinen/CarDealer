@@ -163,8 +163,16 @@ header {
     list-style: none; /* Remove bullet points(punktlista) */
 }
 
+.contact-info {
+    padding: 0px;
+}
+
 .links li {
     list-style: none; /* Remove default bullet points */
+}
+
+.links {
+    padding: 0px;
 }
 
 .footer {
@@ -175,6 +183,8 @@ header {
     height: auto;
     margin-right: 3px;
 }
+
+
 
 
 
