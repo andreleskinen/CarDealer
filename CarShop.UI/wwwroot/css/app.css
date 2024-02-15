@@ -149,6 +149,7 @@ header {
     right: 10px;
 }
 
+
 .footer {
     background-color: #160042; /* Replace the numbers with the color you want */
     color: #d3d3d3; /* White text color */
@@ -176,5 +177,22 @@ header {
     margin-right: 10px; 
 }
 
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.car-container {
+    flex: 1; /* Tar upp all tillgänglig plats i flexbox-container */
+    /* Eventuella andra stilar för din bil-container */
+}
+
+.advanced-search {
+    flex: 0 0 300px; /* Ställer in bredden på den avancerade sökningen till 300px */
+    align-self: flex-start; /* Placera den avancerade sökningen längst upp i flexbox-container */
+    margin-top: 0; /* Justera toppmarginalen om det behövs */
+    /* Eventuella andra stilar för din avancerade sökning */
+}
 
 
