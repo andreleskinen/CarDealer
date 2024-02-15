@@ -46,19 +46,27 @@ header {
     margin: 0 10px; /* Avstånd mellan navigeringslänkarna */
 }
 
-.contact {
-    margin-left: auto;
-    background-color: red;
+.call-box {
     display: flex;
     align-items: center;
-    padding: 0 10px;
-    height: 100%; /* Fyller hela höjden av navigeringsbaren */
-    box-sizing: border-box; /* Inkludera padding i höjden och bredden */
+    background-color: #fba113;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
 }
 
-.phonenr {
-    color: white;
-    margin: 0;
+    .call-box i {
+        font-size: 2rem;
+        margin-right: 10px;
+        background-color: #f4bd13; /* Färg för cirkel */
+        border-radius: 50%; /* Gör det till en cirkel */
+        padding: 15px; /* Justera avståndet mellan ikonen och kanten */
+    }
+
+.carousel img {
+    object-fit: cover;
+    width: 100%;
+    height: 400px;
 }
 
 
