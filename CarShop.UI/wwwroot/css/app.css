@@ -148,3 +148,33 @@ header {
 .next {
     right: 10px;
 }
+
+.footer {
+    background-color: #160042; /* Replace the numbers with the color you want */
+    color: #d3d3d3; /* White text color */
+
+}
+
+.footer h4 {
+    color: #ffffff; /* White color for the h4 headings*/
+}
+
+.contact-info li {
+    list-style: none; /* Remove bullet points(punktlista) */
+}
+
+.links li {
+    list-style: none; /* Remove default bullet points */
+}
+
+.footer {
+    padding-top: 35px; /* Creating some space between the text and the beginning of the footer */
+}
+.logo-pics img {
+    width: 10px;
+    height: auto; 
+    margin-right: 10px; 
+}
+
+
+
