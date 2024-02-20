@@ -162,8 +162,16 @@ header {
     list-style: none; /* Remove bullet points(punktlista) */
 }
 
+.contact-info {
+    padding: 0px;
+}
+
 .links li {
     list-style: none; /* Remove default bullet points */
+}
+
+.links {
+    padding: 0px;
 }
 
 .footer {
@@ -236,6 +244,31 @@ header {
 .content-area {
     padding: 70px 0 70px;
 }
+
+.footer .footer-item {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px; /* Optional: Add some space between headers */
+}
+
+/*
+.logo-pics li {
+    list-style: none;
+}
+*/
+
+/* 
+.logo-pics {
+    margin-top: 25px;
+}
+*/
+
+
+
+
+
+
+
 
 
 
