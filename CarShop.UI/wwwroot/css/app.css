@@ -37,7 +37,7 @@ header {
     padding: 10px 20px; /* skapar utrymme runt innehållet */
     display: flex; /*flex box design som gör det enklare att designa*/
     justify-content: space-between; /*fördelar utrymmet */
-    align-items: center;/*centrerar*/
+    align-items: center; /*centrerar*/
 }
 
 .navbar-nav a {
@@ -70,66 +70,65 @@ header {
 }
 
 
-/* CSS för Car-Box-2 */
+/* CSS för Car-Box-2 start */
 .car-box-2 {
     background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.1);
     border: 1px solid #ddd; /* Add border */
+    margin: 15px;
+    position: relative;
 }
 
     .car-box-2 .car-thumbnail {
         position: relative;
         overflow: hidden;
-        border-radius: 10px;
-    } 
+        width: 100%; /* Make the image fill the width of the container */
+        height: 100%; /* Make the image fill the height of the container */
+    }
 
     .car-box-2 .detail {
         padding: 7px;
     }
 
-        .car-box-2 .detail .title a {
+        .car-box-2 .detail .title {
+            margin-bottom: 0px; /* Add some space between title and price */
+            text-align: left;
+            margin-left: 30px;
+        }
+
+            .car-box-2 .detail .title a {
+                color: #333;
+                display: block; /* Set the name as block-level element */
+                text-decoration: none;
+            }
+
+        .car-box-2 .detail .price {
             color: #333;
-            text-decoration: none;
+            font-weight: bold; /* Make the price bold */
+            text-align: left; /* Align the price to the left */
+            margin-left: 30px; /* Apply margin-left to the price */
+            padding-top: 10px;
         }
-
-            .car-box-2 .detail .title a:hover {
-                color: #ff6b6b;
-            }
-
-        .car-box-2 .detail .location a {
-            color: #777;
-            text-decoration: none;
-        }
-
-            .car-box-2 .detail .location a:hover {
-                color: #ff6b6b;
-            }
 
     .car-box-2 .facilities-list {
         list-style: none;
-        padding: 0;
+        padding: 30px;
+        margin: 0px;
+        padding-top: 20px;
     }
 
         .car-box-2 .facilities-list li {
-            color: #333;
-            margin-right: 20px;
-            font-size: 14px;
+            width: 33.33%;
+            float: left;
+            font-weight: 400;
+            line-height: 35px;
+            font-size: 15px;
+            text-align: left; /* Align the facilities text to the left */
+            margin-left: 0px; /* Apply margin-left to the facilities text */
         }
+/* CSS för Car-Box-2 stopp */
 
-
-            .car-box-2 .facilities-list li:before {
-                font-family: "Font Awesome"; /* Specify the font family */
-                margin-right: 5px;
-            }
-
-.image-container img {
-    max-height: 230px;
-}
-
-.prev,
-.next {
+    .prev, .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -153,12 +152,11 @@ header {
 .footer {
     background-color: #160042; /* Replace the numbers with the color you want */
     color: #d3d3d3; /* White text color */
-
 }
 
-.footer h4 {
-    color: #ffffff; /* White color for the h4 headings*/
-}
+    .footer h4 {
+        color: #ffffff; /* White color for the h4 headings*/
+    }
 
 .contact-info li {
     list-style: none; /* Remove bullet points(punktlista) */
@@ -179,6 +177,7 @@ header {
 .footer {
     padding-top: 35px; /* Creating some space between the text and the beginning of the footer */
 }
+
 .logo-pics img {
     width: 50px;
     height: auto;
@@ -186,21 +185,64 @@ header {
 }
 
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
+/* Sidebar Title */
+.sidebar-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
 }
 
-.car-container {
-    flex: 1; /* Tar upp all tillgänglig plats i flexbox-container */
-    /* Eventuella andra stilar för din bil-container */
+/* Form Container */
+.search-container {
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
 }
 
-.advanced-search {
-    flex: 0 0 300px; /* Ställer in bredden på den avancerade sökningen till 300px */
-    align-self: flex-start; /* Placera den avancerade sökningen längst upp i flexbox-container */
-    margin-top: 0; /* Justera toppmarginalen om det behövs */
-    /* Eventuella andra stilar för din avancerade sökning */
+/* Form Group */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* Select Box */
+.selectpicker {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    transition: border-color 0.5s ease;
+}
+
+/* Input Box */
+.selectpicker[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    transition: border-color 0.5s ease;
+}
+
+/* sök knappen */
+.search-button {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-radius: 0;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+/*mellan rum mellan top bilden ch bilar till salu*/
+.content-area {
+    padding: 70px 0 70px;
 }
 
 
@@ -214,3 +256,49 @@ header {
 
 
 
+
+
+
+
+
+
+
+/* val ruta börjar */
+
+.option-bar {
+    padding: 10px; /* Padding around the option bar */
+    margin-bottom: 5px; /* Margin bottom to create space between elements */
+}
+
+.sorting-options2 {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    margin-left: 10px; /* Adjust margin to move the entire sorting options to the right */
+}
+
+.sort {
+    margin-right: 10px; /* Margin between "Sort by" text and dropdown */
+}
+
+.custom-search-container {
+    flex-grow: 1; /* Allow the search container to grow and fill available space */
+}
+
+.custom-search-fields-container {
+    width: 200px; /* Width of the dropdown container */
+}
+
+.optionBar.custom-search-fields {
+    width: 100%; /* Make the dropdown fill its container */
+    padding: 8px; /* Padding inside the dropdown */
+    border: 1px solid #ccc; /* Border around the dropdown */
+    background-color: #fff; /* Background color of the dropdown */
+    font-size: 14px; /* Font size of the dropdown */
+    cursor: pointer; /* Cursor style */
+}
+
+    .optionBar.custom-search-fields:focus {
+        outline: none; /* Remove outline on focus */
+    }
+
+/* val ruta slutar */
