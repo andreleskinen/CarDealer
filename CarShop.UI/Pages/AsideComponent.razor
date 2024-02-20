@@ -1,8 +1,5 @@
-﻿<!--
-<aside 
-id="aside-menu" 
-class="d-flex flex-column m-2 ms-0 mt-0 p-2 pt-0 bg-body-socondary vh-100" 
-style="min-width:160px; max-width:200px;">
+﻿
+<aside id="aside-menu" class="d-flex flex-column m-2 ms-0 mt-0 p-2 pt-0 bg-body-socondary vh-100" style="min-width:160px; max-width:200px;">
     @foreach (var group in CategoryLinkGroups)
     {
         <LinkMainComponent LinkGroup="group"/>
@@ -16,10 +13,11 @@ style="min-width:160px; max-width:200px;">
         new LinkGroup()
         {
             Name = "Category",
-            new ListLinkOption { Id = 1, Name = "Women", IsSelected = true },
-            new ListLinkOption { Id = 2, Name = "Men", IsSelected = false },
-            new ListLinkOption { Id = 3, Name = "Children", IsSelected = false }
+            LinkOptions= new(){
+                new LinkOption { Id = 1, Name = "Sedan", IsSelected = true },
+                new LinkOption { Id = 2, Name = "Kombi", IsSelected = false },
+                new LinkOption { Id = 3, Name = "SUV", IsSelected = false }
+            }
         }
     };
 }
--->
