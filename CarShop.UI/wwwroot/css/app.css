@@ -179,9 +179,8 @@ header {
 }
 
 .logo-pics img {
-    width: 50px;
+    width: 45px;
     height: auto;
-    margin-right: 3px;
 }
 
 
@@ -245,24 +244,6 @@ header {
     padding: 70px 0 70px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* val ruta börjar */
 
 .option-bar {
@@ -302,3 +283,69 @@ header {
     }
 
 /* val ruta slutar */
+
+
+/* Remove blue link underlines */
+.footer a {
+    text-decoration: none;
+    color: #d3d3d3; /* Adjust link color */
+}
+
+.contact-info {
+    margin-bottom: 10px; /* Add space below the contact info */
+    }
+
+    .contact-info .bi-geo-alt-fill {
+        margin-right: 10px; /* Add space between icon and text */
+    }
+
+    .contact-info .bi-envelope-at-fill {
+        margin-right: 10px; /* Add space between icon and text */
+    }
+
+    .contact-info .bi-telephone-fill {
+        margin-right: 10px; /* Add space between icon and text */
+    }
+
+    .contact-info li {
+        margin-bottom: 10px; /* Add space between each contact information row */
+    }
+
+.links li {
+    margin-bottom: 7.5px; /* Add space between each contact information row */
+}
+
+li {
+    list-style: none;
+}
+
+.logo-pics {
+    padding: 0px;
+}
+
+.btn.sub {
+    background-color: #b32121;
+    padding: 20px;
+    margin-left: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+    .btn.sub .bi.bi-send-fill {
+        color: #f9f9f9;
+        font-size: 15px;
+
+    }
+
+.logo-pics li {
+    margin-right: 10px; /* Adjust the margin-right value to create space between the icons */
+    font-size: 30px;
+}
+
+.email-box {
+    width: 200px;
+    height: 50px;
+}
+
+
