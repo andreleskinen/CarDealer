@@ -1,22 +1,81 @@
-﻿
-<aside id="aside-menu" class="d-flex flex-column m-2 ms-0 mt-0 p-2 pt-0 bg-body-socondary vh-100" style="min-width:160px; max-width:200px;">
-    @foreach (var group in CategoryLinkGroups)
-    {
-        <LinkMainComponent LinkGroup="group"/>
-    }
+﻿<div class="col-lg-4 mb-4">
+    <aside id="aside-menu" class="d-flex flex-column m-2 ms-0 mt-0 p-2 pt-0 vh-100" style="max-width: 350px;">
 
+     <div class="sidebar-right">
+        <!-- Advanced search start -->
+        <div class="widget widget-3 advanced-search2">
+            <div class="search-container">
+                <h5 class="sidebar-title">Sök Bilar</h5>
+                    @foreach (var group in CategoryLinkGroups)
+                    {
+                        <LinkMainComponent LinkGroup="group" />
+                    }
+                <form method="GET" style="margin-top: 10px;">
+                    <div class="form-group">
+                        <div class="dropdown bootstrap-select search-fields ">
+                            <select class="selectpicker search-fields">
+                                <option>Modell</option>
+                                <option>Q7</option>
+                                <option>Mustang</option>
+                                <option>Prius</option>
+                                <option>500</option>
+                                <option>Classic racer</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="dropdown bootstrap-select search-fields">
+                            <select class="selectpicker search-fields" name="select-make">
+                                <option>Tillverkare</option>
+                                <option>Audi</option>
+                                <option>Ford</option>
+                                <option>Toyota</option>
+                                <option>Fiat</option>
+                                <option>MG</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="dropdown bootstrap-select search-fields">
+                            <input type="text" class="selectpicker search-fields" placeholder="Årsmodell" name="type-year">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="dropdown bootstrap-select search-fields">
+                            <select class="selectpicker search-fields" name="select-type">
+                                <option>Välj Kaross</option>
+                                <option>Alla</option>
+                                <option>Nya</option>
+                                <option>Begagnade</option>
+                                <option>Elektrisk</option>
+                                <option>Hybrid</option>
+                                <option>Sport</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-0">
+                        <button class="search-button btn">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </aside>
+</div>
+
 
 @code {
     List<LinkGroup> CategoryLinkGroups { get; set; } = new()
     {
         new LinkGroup()
         {
-            Name = "Category",
+            Name = "Vehicle Type",
             LinkOptions= new(){
                 new LinkOption { Id = 1, Name = "Sedan", IsSelected = true },
                 new LinkOption { Id = 2, Name = "Kombi", IsSelected = false },
-                new LinkOption { Id = 3, Name = "SUV", IsSelected = false }
+                new LinkOption { Id = 3, Name = "SUV", IsSelected = false },
+                new LinkOption { Id = 4, Name = "Coupé", IsSelected = false }
             }
         }
     };

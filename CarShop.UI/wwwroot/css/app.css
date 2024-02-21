@@ -185,6 +185,8 @@ header {
 
 
 /* Sidebar Title */
+
+
 .sidebar-title {
     font-size: 1.5rem;
     font-weight: bold;
@@ -195,6 +197,7 @@ header {
 .search-container {
     padding: 1rem;
     border: 1px solid #e0e0e0;
+    border-radius: 10px;
 }
 
 /* Form Group */
@@ -347,5 +350,7 @@ li {
     width: 200px;
     height: 50px;
 }
+
+
 
 

@@ -1,11 +1,11 @@
 ﻿
 <article>
-    <div class="bg-primary">@LinkGroup?.Name</div>
-    <div>
-        @foreach(var link in LinkGroup!.LinkOptions)
-        {
-            <LinkComponent LinkOption="link"/>
-        }
+    <div style="border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9; font-weight: bold;">@LinkGroup?.Name
+        
+            @foreach(var link in LinkGroup!.LinkOptions)
+            {
+                <LinkComponent LinkOption="link"/>
+            }
     </div>
 </article>
 @code {
