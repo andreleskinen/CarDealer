@@ -1,4 +1,4 @@
-﻿<div class="col-lg-4 mb-4">
+﻿<div class="col-lg-4 mb-4"  >
     <aside id="aside-menu" class="d-flex flex-column m-2 ms-0 mt-0 p-2 pt-0 vh-100" style="max-width: 350px;">
 
      <div class="sidebar-right">
@@ -8,7 +8,7 @@
                 <h5 class="sidebar-title">Sök Bilar</h5>
                     @foreach (var group in CategoryLinkGroups)
                     {
-                        <LinkMainComponent LinkGroup="group" />
+                        <LinkMainComponent LinkGroup="group" OnAsideCall="OnAsideCallback" />
                     }
                 <form method="GET" style="margin-top: 10px;">
                     <div class="form-group">
@@ -66,6 +66,15 @@
 
 
 @code {
+    [Parameter] public EventCallback OnChange { get; set; }
+
+    void OnAsideCallback(int id)
+    {
+        if (OnChange.HasDelegate)
+        {
+            OnChange.InvokeAsync();
+        }
+    }
     List<LinkGroup> CategoryLinkGroups { get; set; } = new()
     {
         new LinkGroup()
