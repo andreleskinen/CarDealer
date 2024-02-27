@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CarShop.Data.Shared\CarShop.Data.Shared.csproj" />
+    <ProjectReference Include="..\CarShop.Data.Shared.New\CarShop.Data.Shared.New.csproj" />
     <ProjectReference Include="..\CarShop.Data\CarShop.Data.csproj" />
   </ItemGroup>
 

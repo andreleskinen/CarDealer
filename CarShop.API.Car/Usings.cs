@@ -5,5 +5,6 @@ global using CarShop.Data.Entities;
 global using CarShop.API.Extensions;
 global using AutoMapper;
 global using CarShop.Data.Services;
+global using CarShop.Data.Shared.New;
 
 

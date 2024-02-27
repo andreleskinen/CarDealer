@@ -13,7 +13,7 @@ namespace CarShop.Data.Migrations
 {
     [DbContext(typeof(CarShopContext))]
     [Migration("20240130142313_stefan")]
-    partial class stefan
+    partial class Stefan
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

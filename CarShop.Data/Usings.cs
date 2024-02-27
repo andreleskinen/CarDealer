@@ -1,5 +1,5 @@
-﻿global using CarShop.Data.Shared.Interfaces;
-global using CarShop.Data.Shared.Enums;
+﻿global using CarShop.Data.Shared.New.Interfaces;
+global using CarShop.Data.Shared.New.Enums;
 global using CarShop.Data.Entities;
 global using Microsoft.EntityFrameworkCore;
 global using AutoMapper;

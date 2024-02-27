@@ -1,9 +1,22 @@
 ﻿@page "/"
+@inject UIService Service
 
-<MenuComponent/>
-<Frontpicture/>
+<MenuComponent /> 
+<Frontpicture />
+
 <div id="viewport" class="d-flex" style="padding-top: 25px;">
-    <CarForSale/>
-    <AsideComponent/>
+    <CascadingValue Value="Service" Name="Service" >
+        <CarForSale />
+        <AsideComponent OnChange="OnChange" />
+    </CascadingValue> 
 </div>
-<FooterInfo/>
+
+@code {
+    void OnChange()
+    {
+        
+    }
+}
+
+
+<FooterInfo />

@@ -5,7 +5,7 @@
 namespace CarShop.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class stefan : Migration
+    public partial class Stefan : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

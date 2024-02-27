@@ -4,7 +4,7 @@ namespace CarShop.Data.Entities;
 public class Car : IEntity
 {
     public int Id { get; set; }
-    public string Name { get; set; }
+    public string Name { get; set; }    
 
     public List<Category>? Categories { get; set; }
     public List<CarColor>? CarColors { get; set; }

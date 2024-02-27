@@ -1,71 +1,93 @@
 ﻿<div class="col-lg-4 mb-4">
     <aside id="aside-menu" class="d-flex flex-column m-2 ms-0 mt-0 p-2 pt-0 vh-100" style="max-width: 350px;">
 
-     <div class="sidebar-right">
-        <!-- Advanced search start -->
-        <div class="widget widget-3 advanced-search2">
-            <div class="search-container">
-                <h5 class="sidebar-title">Sök Bilar</h5>
-                    @foreach (var group in CategoryLinkGroups)
+        <div class="sidebar-right">
+            <!-- Advanced search start -->
+            <div class="widget widget-3 advanced-search2">
+                <div class="search-container">
+                    <h5 class="sidebar-title">Sök Bilar</h5>
+                    @foreach (var group in Service!.CategoryLinkGroups)
                     {
                         <LinkMainComponent LinkGroup="group" />
                     }
-                <form method="GET" style="margin-top: 10px;">
-                    <div class="form-group">
-                        <div class="dropdown bootstrap-select search-fields ">
-                            <select class="selectpicker search-fields">
-                                <option>Modell</option>
-                                <option>Q7</option>
-                                <option>Mustang</option>
-                                <option>Prius</option>
-                                <option>500</option>
-                                <option>Classic racer</option>
-                            </select>
+                    <form method="GET" style="margin-top: 10px;">
+                        <div class="form-group">
+                            <div class="dropdown bootstrap-select search-fields ">
+                                <select class="selectpicker search-fields">
+                                    <option>Modell</option>
+                                    <option>Q7</option>
+                                    <option>Mustang</option>
+                                    <option>Prius</option>
+                                    <option>500</option>
+                                    <option>Classic racer</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="dropdown bootstrap-select search-fields">
-                            <select class="selectpicker search-fields" name="select-make">
-                                <option>Tillverkare</option>
-                                <option>Audi</option>
-                                <option>Ford</option>
-                                <option>Toyota</option>
-                                <option>Fiat</option>
-                                <option>MG</option>
-                            </select>
+                        <div class="form-group">
+                            <div class="dropdown bootstrap-select search-fields">
+                                <select class="selectpicker search-fields" name="select-make">
+                                    <option>Tillverkare</option>
+                                    <option>Audi</option>
+                                    <option>Ford</option>
+                                    <option>Toyota</option>
+                                    <option>Fiat</option>
+                                    <option>MG</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="dropdown bootstrap-select search-fields">
-                            <input type="text" class="selectpicker search-fields" placeholder="Årsmodell" name="type-year">
+                        <div class="form-group">
+                            <div class="dropdown bootstrap-select search-fields">
+                                <input type="text" class="selectpicker search-fields" placeholder="Årsmodell" name="type-year">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="dropdown bootstrap-select search-fields">
-                            <select class="selectpicker search-fields" name="select-type">
-                                <option>Välj Kaross</option>
-                                <option>Alla</option>
-                                <option>Nya</option>
-                                <option>Begagnade</option>
-                                <option>Elektrisk</option>
-                                <option>Hybrid</option>
-                                <option>Sport</option>
-                            </select>
+                        <div class="form-group">
+                            <div class="dropdown bootstrap-select search-fields">
+                                <select class="selectpicker search-fields" name="select-type">
+                                    <option>Välj Kaross</option>
+                                    <option>Alla</option>
+                                    <option>Nya</option>
+                                    <option>Begagnade</option>
+                                    <option>Elektrisk</option>
+                                    <option>Hybrid</option>
+                                    <option>Sport</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-group mb-0">
-                        <button class="search-button btn">Search</button>
-                    </div>
-                </form>
+                        <div class="form-group mb-0">
+                            <button class="search-button btn">Search</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-</aside>
+    </aside>
 </div>
 
 
 @code {
+    [CascadingParameter(Name = "Service")] public UIService? Service { get; set; }
+    [Parameter] public EventCallback OnChange { get; set; }
+
+    async Task OnAsideCallback(int id)
+    {
+        if (OnChange.HasDelegate)
+        {
+            
+            OnChange.InvokeAsync();
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Service is not null)
+        {
+            await Service.GetLinkGroups();
+            await OnChange.InvokeAsync();
+        }
+    }
+
+    /*
     List<LinkGroup> CategoryLinkGroups { get; set; } = new()
     {
         new LinkGroup()
@@ -79,4 +101,5 @@
             }
         }
     };
+    */
 }
