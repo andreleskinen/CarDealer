@@ -1,7 +1,5 @@
-﻿
-
-
-using CarShop.API.DTO;
+﻿using CarShop.API.DTO;
+using System.Drawing;
 
 namespace CarShop.Data.Services;
 
@@ -13,6 +11,31 @@ public class CategoryDbService(CarShopContext db, IMapper mapper) : DbService(db
         //IncludeNavigationsFor<Product>();
         return await base.GetAsync<TEntity, TDto>();
     }
+
+    public Task<object?> GetCategoriesByCategoryAsync(int categoryId)
+    {
+        throw new NotImplementedException();
+    }
+
+    public async Task<List<CarGetDTO>> GetProductsByCategoryAsync(int categoryId)
+    {
+        IncludeNavigationsFor<Color>(); //HÄR VET JAG INTE VAD SOM SKA STÅ SOM MOTSVARAR HANS COLOR.
+        IncludeNavigationsFor<Size>(); //HÄR VET JAG INTE VAD SOM SKA STÅ SOM MOTSVARAR HANS SIZE.
+        var carIds = GetAsync<CarCategory>(cc => cc.CategoryId.Equals(categoryId))
+            .Select(cc => cc.CarId);
+        var cars = await GetAsync<Car>(c => carIds.Contains(c.Id)).ToListAsync();
+        return MapList<Car, CarGetDTO>(cars);
+    }
+
+    public List<TDto> MapList<TEntity, TDto>(List<TEntity> entities)
+        where TEntity : class
+        where TDto : class
+    {
+        return mapper.Map<List<TDto>>(entities);
+    }
+
+
+
 
     /*public async Task<List<CarGetDTO>> GetCategoriesWithAllRelatedDataAsync() // CategoryGetDTO
     {

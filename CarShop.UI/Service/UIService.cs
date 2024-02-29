@@ -25,5 +25,4 @@ public class UIService(CategoryHttpClient categoryHttp, IMapper mapper)
         CategoryLinkGroups[0].LinkOptions = mapper.Map<List<LinkOption>>(Categories);
         var linkOption = CategoryLinkGroups[0].LinkOptions.FirstOrDefault();
     }
-
 }
