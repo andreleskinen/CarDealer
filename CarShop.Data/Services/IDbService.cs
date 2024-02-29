@@ -23,5 +23,8 @@ public interface IDbService
     bool Delete<TEntity, TDto>(TDto dto)
         where TEntity : class where TDto : class;
 
+    void IncludeNavigationsFor<TEntity>()
+        where TEntity : class;
+
     Task<bool> SaveChangesAsync();
 }

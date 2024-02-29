@@ -46,7 +46,6 @@ void RegisterEndpoints()
     
     app.AddEndpoint<Car, CarPostDTO, CarPutDTO, CarGetDTO>();
     app.AddEndpoint<CarCategory, CarCategoryDTO>();
-    
     app.AddEndpoint<CarColor, CarColorDTO>();
     app.AddEndpoint<CategoryFilter, CategoryFilterDTO>();
     app.AddEndpoint<Category, CategoryPostDTO, CategoryPutDTO, CategoryGetDTO>();
@@ -54,25 +53,22 @@ void RegisterEndpoints()
     app.AddEndpoint<Filter, FilterPostDTO, FilterPutDTO, FilterGetDTO>();
     app.AddEndpoint<Make, MakePostDTO, MakePutDTO, MakeGetDTO>();
     app.AddEndpoint<Model, ModelPostDTO, ModelPutDTO, ModelGetDTO>();
-    
-    
-    
 
 
 
-
-    /*app.MapGet($"/api/categorieswithdata", async (IDbService db) =>
+    app.MapGet($"/api/carsbycategory/{{categoryId}}", async (IDbService db, int categoryId) =>
     {
         try
         {
-            return Results.Ok(await ((CarDbService)db).GetCategoriesWithAllRelatedDataAsync());
+            var result = await ((CategoryDbService)db).GetCategoriesByCategoryAsync(categoryId);
+            return Results.Ok(result);
         }
         catch
         {
         }
 
-        return Results.BadRequest($"Couldn't get the requested products of type {typeof(Product).Name}.");
-    });*/
+        return Results.BadRequest($"Couldn't get the requested cars of type {typeof(Car).Name}.");
+    });
 }
 void RegisterServices()
 {
