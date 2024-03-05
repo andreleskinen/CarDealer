@@ -1,5 +1,4 @@
-﻿@inject CarShop.UI.Service.UIService Service
-
+﻿
 <div class="col-lg-4 mb-4"  >
     <aside id="aside-menu" class="d-flex flex-column m-2 ms-0 mt-0 p-2 pt-0 vh-100" style="max-width: 350px;">
 
@@ -68,6 +67,7 @@
 
 
 @code {
+    [CascadingParameter(Name="Service")] public UIService? Service { get; set; }
     [Parameter] public EventCallback OnChange { get; set; }
 
     void OnAsideCallback(int id)
@@ -78,7 +78,7 @@
         }
     }
     
-    List<LinkGroup> CategoryLinkGroups { get; set; } = new()
+    /*List<LinkGroup> CategoryLinkGroups { get; set; } = new()
     {
         new LinkGroup()
         {
@@ -90,5 +90,5 @@
                 new LinkOption { Id = 4, Name = "Coupé", IsSelected = false }
             }
         }
-    };
+    };*/
 }
