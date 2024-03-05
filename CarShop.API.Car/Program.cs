@@ -60,7 +60,7 @@ void RegisterEndpoints()
     {
         try
         {
-            var result = await ((CategoryDbService)db).GetCategoriesByCategoryAsync(categoryId);
+            var result = await ((CarDbService)db).GetCarsByCategoryAsync(categoryId);
             return Results.Ok(result);
         }
         catch
@@ -73,7 +73,7 @@ void RegisterEndpoints()
 void RegisterServices()
 {
     ConfigureAutoMapper();
-    builder.Services.AddScoped<IDbService, DbService>();
+    builder.Services.AddScoped<IDbService, CarDbService>();
 }
 
 void ConfigureAutoMapper()
@@ -84,23 +84,22 @@ void ConfigureAutoMapper()
         cfg.CreateMap<Car, CarPutDTO>().ReverseMap();
         cfg.CreateMap<Car, CarGetDTO>().ReverseMap();
         cfg.CreateMap<Car, CarSmallGetDTO>().ReverseMap();
-        cfg.CreateMap<CarCategory, CarCategoryDTO>().ReverseMap();
-        cfg.CreateMap<CarColor, CarColorDTO>().ReverseMap();
         cfg.CreateMap<Color, ColorPostDTO>().ReverseMap();
         cfg.CreateMap<Color, ColorPutDTO>().ReverseMap();
         cfg.CreateMap<Color, ColorGetDTO>().ReverseMap();
-        cfg.CreateMap<Filter, FilterPostDTO>().ReverseMap();
-        cfg.CreateMap<Filter, FilterPutDTO>().ReverseMap();
-        cfg.CreateMap<Filter, FilterGetDTO>().ReverseMap();
         cfg.CreateMap<Make, MakePostDTO>().ReverseMap();
         cfg.CreateMap<Make, MakePutDTO>().ReverseMap();
         cfg.CreateMap<Make, MakeGetDTO>().ReverseMap();
         cfg.CreateMap<Model, ModelPostDTO>().ReverseMap();
         cfg.CreateMap<Model, ModelPutDTO>().ReverseMap();
         cfg.CreateMap<Model, ModelGetDTO>().ReverseMap();
+        cfg.CreateMap<CarCategory, CarCategoryDTO>().ReverseMap();
 
 
         /*
+        cfg.CreateMap<Filter, FilterPostDTO>().ReverseMap();
+        cfg.CreateMap<Filter, FilterPutDTO>().ReverseMap();
+        cfg.CreateMap<Filter, FilterGetDTO>().ReverseMap();
         cfg.CreateMap<Filter, FilterGetDTO>().ReverseMap();
         cfg.CreateMap<Size, OptionDTO>().ReverseMap();
         cfg.CreateMap<Color, OptionDTO>().ReverseMap();

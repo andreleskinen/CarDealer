@@ -3,13 +3,22 @@ using System.Drawing;
 
 namespace CarShop.Data.Services;
 
-public class CategoryDbService(CarShopContext db, IMapper mapper) : DbService(db, mapper)
+public class CarDbService(CarShopContext db, IMapper mapper) : DbService(db, mapper)
 {
-    public override async Task<List<TDto>> GetAsync<TEntity, TDto>()
+    public async Task<List<CarGetDTO>> GetCarsByCategoryAsync(int categoryId)
     {
-        //IncludeNavigationsFor<Filter>();
-        //IncludeNavigationsFor<Product>();
-        return await base.GetAsync<TEntity, TDto>();
+        IncludeNavigationsFor<Make>();
+        IncludeNavigationsFor<Model>();
+        var productIds = GetAsync<CarCategory>(cc => cc.CategoryId.Equals(categoryId))
+            .Select(cc => cc.CarId);
+        var products = await GetAsync<Car>(c => productIds.Contains(c.Id)).ToListAsync();
+        return MapList<Car, CarGetDTO>(products);
+    }
+    public List<TDto> MapList<TEntity, TDto>(List<TEntity> entities)
+    where TEntity : class
+    where TDto : class
+    {
+        return mapper.Map<List<TDto>>(entities);
     }
 
 

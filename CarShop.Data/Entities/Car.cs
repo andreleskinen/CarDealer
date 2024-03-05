@@ -7,7 +7,6 @@ public class Car : IEntity
     public string Name { get; set; }    
 
     public List<Category>? Categories { get; set; }
-    public List<CarColor>? CarColors { get; set; }
     public List<Color>? Colors { get; set; }
 
     public int? MakeId { get; set; }
