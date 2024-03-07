@@ -1,12 +1,11 @@
-﻿<!--
-<div class="card product-card text-bg-dark mx-3 rounded-0 border border-0">
-    <img src="@Card?.Image" class="card-img rounded-0" alt="...">
-    <div class="card-img-overlay">
-        <h5 class="card-title">@Card?.Heading</h5>
-    </div>
-</div>
+﻿<section class="d-flex flex-wrap">
+    @foreach(var cars in Service!.Cars)
+    {
+        
+    }
+</section>
 
 @code {
-    [Parameter] public ProductCard? Card { get; set; }
+    [CascadingParameter(Name = "Service")] public UIService? Service { get; set; }
+    [Parameter] public EventCallback OnChange { get; set; }
 }
--->

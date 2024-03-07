@@ -14,7 +14,7 @@ public class CarHttpClient
         _httpClient.BaseAddress = new Uri($"{_baseAdress}cars");
     }
 
-    public async Task<List<CategoryGetDTO>> GetCategoryAsync(int categoryId)
+    public async Task<List<CarGetDTO>> GetCategoryAsync(int categoryId)
     {
         try
         {
@@ -24,7 +24,7 @@ public class CarHttpClient
             response.EnsureSuccessStatusCode();
 
             var resultStream = await response.Content.ReadAsStreamAsync();
-            var result = await JsonSerializer.DeserializeAsync<List<CategoryGetDTO>>(resultStream,
+            var result = await JsonSerializer.DeserializeAsync<List<CarGetDTO>>(resultStream,
                 new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
             return result ?? [];
