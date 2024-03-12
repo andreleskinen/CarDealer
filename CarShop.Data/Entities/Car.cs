@@ -14,9 +14,6 @@ public class Car : IEntity
     public List<Color>? Colors { get; set; }
     public List<Filter>? Filters { get; set; }
 
-    public int? MakeId { get; set; }
-    public int? ModelId { get; set; }
-
     public int? Year { get; set; }
     public double? Price { get; set; }
     public int? Mileage { get; set; }

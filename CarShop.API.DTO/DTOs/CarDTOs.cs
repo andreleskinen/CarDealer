@@ -1,4 +1,6 @@
-﻿namespace CarShop.API.DTO;
+﻿using CarShop.API.DTO.DTOs;
+
+namespace CarShop.API.DTO;
 
 public class CarPostDTO
 {
@@ -13,6 +15,11 @@ public class CarPutDTO : CarPostDTO
 }
 public class CarGetDTO : CarPutDTO
 {
+    public int ModelId { get; set; }
+    public int MakeId { get; set; }
+
+    public MakeGetDTO? Make { get; set; }
+    public ModelGetDTO? Model { get; set; }
     //public List<FilterGetDTO>? Filters { get; set; }
 }
 public class CarSmallGetDTO : CarPutDTO
