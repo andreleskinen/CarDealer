@@ -7,8 +7,8 @@ public class CarDbService(CarShopContext db, IMapper mapper) : DbService(db, map
 {
     public async Task<List<CarGetDTO>> GetCarsByCategoryAsync(int categoryId)
     {
-        IncludeNavigationsFor<Make>();
-        IncludeNavigationsFor<Model>();
+        //IncludeNavigationsFor<Make>();
+        //IncludeNavigationsFor<Model>();
         var productIds = GetAsync<CarCategory>(cc => cc.CategoryId.Equals(categoryId))
             .Select(cc => cc.CarId);
         var products = await GetAsync<Car>(c => productIds.Contains(c.Id)).ToListAsync();

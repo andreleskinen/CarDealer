@@ -93,6 +93,7 @@ void ConfigureAutoMapper()
         cfg.CreateMap<Model, ModelPostDTO>().ReverseMap();
         cfg.CreateMap<Model, ModelPutDTO>().ReverseMap();
         cfg.CreateMap<Model, ModelGetDTO>().ReverseMap();
+        cfg.CreateMap<Category, CategoryGetDTO>().ReverseMap();
         cfg.CreateMap<CarCategory, CarCategoryDTO>().ReverseMap();
 
 

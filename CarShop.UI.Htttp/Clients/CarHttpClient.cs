@@ -6,12 +6,12 @@ namespace CarShop.UI.Htttp.Clients;
 public class CarHttpClient
 {
     private readonly HttpClient _httpClient;
-    string _baseAdress = "https://localhost:5000/api/";
+    string _baseAdress = "https://localhost:5500/api/";
 
     public CarHttpClient(HttpClient httpClient)
     {
         _httpClient = httpClient;
-        _httpClient.BaseAddress = new Uri($"{_baseAdress}cars");
+        _httpClient.BaseAddress = new Uri($"{_baseAdress}");
     }
 
     public async Task<List<CarGetDTO>> GetCategoryAsync(int categoryId)
@@ -40,7 +40,7 @@ public class CarHttpClient
         try
         {
             // Use the relative path, not the base address here
-            string relativePath = $"productsbycategory/{currentCatgeoryId}";
+            string relativePath = $"carsbycategory/{currentCatgeoryId}";
             using HttpResponseMessage response = await _httpClient.GetAsync(relativePath);
             response.EnsureSuccessStatusCode();
 
