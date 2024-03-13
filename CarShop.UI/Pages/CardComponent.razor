@@ -1,17 +1,24 @@
 ﻿<section class="d-flex flex-wrap">
     @foreach(var cars in Service!.Cars)
     {
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="carbox mb-3" style="max-width: 540px;">
             <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="@cars.PictureURL" class="img-fluid rounded-start" alt="...">
+                <div class="col-lg-5 col-md-5">
+                    <div class="car-thumbnail">
+                        <img src="@cars.PictureURL" class="img-fluid rounded-start" alt="...">
+                        <div class="price-box">
+                            <sup>$</sup>
+                            @cars.Price
+                            @cars.Mileage
+                            @cars.Year
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title">@cars.Name</h5>
                         <p class="card-text">@cars.Description</p>
-                        <p class="card-make">@cars.Make?.Name</p>
-                        <p class="card-model">@cars.Model?.Name</p>
+                        <p class="card-makemodel">@cars.Make?.Name @cars.Model?.Name</p>
                         <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                     </div>
                  </div>

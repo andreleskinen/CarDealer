@@ -20,6 +20,8 @@
                 <div>
                     <!-- Car box 2 start -->
                     <!-- First car on website start-->
+                    @foreach (var cars in Service!.Cars)
+                    {   
                     <div class="car-box-2">
                         <div class="row g-0">
                             <div class="col-lg-5 col-md-5">
@@ -49,15 +51,15 @@
                             <div class="col-lg-7 col-md-7 align-self-center">
                                 <div class="detail">
                                     <h5 class="title">
-                                        <a href="car-details.html">Ford Mustang</a>
+                                        <h5>@cars.Make?.Name @cars.Model?.Name</h5>
                                     </h5>
                                     <span class="price">
-                                        <i class="bi bi-tag-fill"></i> 325 000 kr
+                                        <i class="bi bi-tag-fill"></i> @cars.Price kr
                                     </span>
                                     <ul class="facilities-list clearfix">
-                                        <li><i class="bi bi-speedometer2"></i> 12,400 km</li>
+                                        <li><i class="bi bi-speedometer2"></i> @cars.Mileage</li>
                                         <li><i class="bi bi-gear"></i> Automat</li>
-                                        <li><i class="bi bi-calendar3"></i> 2021</li>
+                                        <li><i class="bi bi-calendar3"></i> @cars.Year</li>
                                         <li><i class="bi bi-fuel-pump"></i> Bensin</li>
                                         <li><i class="bi bi-car-front"></i> Sport</li>
                                         <li><i class="bi bi-paint-bucket"></i> Röd</li>
@@ -66,6 +68,7 @@
                             </div>
                         </div>
                     </div>
+                    }
 
                     <script>
                         var images = ["images/car-2.jpg", "images/hidden-1.jpg"]; // lista med bildsökvägar
@@ -85,272 +88,6 @@
                     </script>
 
                     <!-- First car on website stop-->
-                    <!-- second car on website start-->
-                    <div class="car-box-2">
-                        <div class="row g-0">
-                            <div class="col-lg-5 col-md-5">
-                                <div class="car-thumbnail">
-                                    <div class="image-container">
-                                        <img class="d-block w-100" id="carImage2" src="images/car-6.jpg" alt="car">
-                                        <a href="#" class="prev" onclick="changeImage2(-1, event, 'carImage2', images2)">&#10094;</a>
-                                        <a href="#" class="next" onclick="changeImage2(1, event, 'carImage2', images2)">&#10095;</a>
-                                    </div>
-                                </div>
-                                <div class="carbox-overlap-wrapper">
-                                    <div class="overlap-box">
-                                        <div class="overlap-btns-area">
-                                            <a class="overlap-btn" data-bs-toggle="modal" data-bs-target="#carOverviewModal">
-                                                <i class="fa fa-eye-slash"></i>
-                                            </a>
-                                            <a class="overlap-btn wishlist-btn">
-                                                <i class="fa fa-heart-o"></i>
-                                            </a>
-                                            <a class="overlap-btn compare-btn">
-                                                <i class="fa fa-balance-scale"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-7 col-md-7 align-self-center">
-                                <div class="detail">
-                                    <h5 class="title">
-                                        <a href="car-details.html">Audi Q7</a>
-                                    </h5>
-                                    <span class="price">
-                                        <i class="bi bi-tag-fill"></i> 370 000 kr
-                                    </span>
-                                    <ul class="facilities-list clearfix">
-                                        <li><i class="bi bi-speedometer2"></i> 12,400 km</li>
-                                        <li><i class="bi bi-gear"></i> Automat</li>
-                                        <li><i class="bi bi-calendar3"></i> 2021</li>
-                                        <li><i class="bi bi-fuel-pump"></i> Bensin</li>
-                                        <li><i class="bi bi-car-front"></i> Sport</li>
-                                        <li><i class="bi bi-paint-bucket"></i> Röd</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <script>
-                        var images2 = ["images/car-6.jpg", "images/hidden-7.jpg"]; // lista med bildsökvägar
-                        var currentImageIndex2 = 0;
-                        var carImage2 = document.getElementById('carImage2');
-
-                        function changeImage2(direction, event, imageId, imageArray) {
-                            event.preventDefault(); // Förhindra standardbeteendet för länken
-                            currentImageIndex2 += direction;
-                            if (currentImageIndex2 < 0) {
-                                currentImageIndex2 = imageArray.length - 1;
-                            } else if (currentImageIndex2 >= imageArray.length) {
-                                currentImageIndex2 = 0;
-                            }
-                            document.getElementById(imageId).src = imageArray[currentImageIndex2];
-                        }
-                    </script>
-
-                    <!-- Car box 2 start -->
-                    <!-- third car on website start-->
-                    <div class="car-box-2">
-                        <div class="row g-0">
-                            <div class="col-lg-5 col-md-5">
-                                <div class="car-thumbnail">
-                                    <div class="image-container">
-                                        <img class="d-block w-100" id="carImage3" src="images/car-4.jpg" alt="car">
-                                        <a href="#" class="prev" onclick="changeImage3(-1, event, 'carImage3', images3)">&#10094;</a>
-                                        <a href="#" class="next" onclick="changeImage3(1, event, 'carImage3', images3)">&#10095;</a>
-                                    </div>
-                                </div>
-                                <div class="carbox-overlap-wrapper">
-                                    <div class="overlap-box">
-                                        <div class="overlap-btns-area">
-                                            <a class="overlap-btn" data-bs-toggle="modal" data-bs-target="#carOverviewModal">
-                                                <i class="fa fa-eye-slash"></i>
-                                            </a>
-                                            <a class="overlap-btn wishlist-btn">
-                                                <i class="fa fa-heart-o"></i>
-                                            </a>
-                                            <a class="overlap-btn compare-btn">
-                                                <i class="fa fa-balance-scale"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-7 col-md-7 align-self-center">
-                                <div class="detail">
-                                    <h5 class="title">
-                                        <a href="car-details.html">Toyota Prius</a>
-                                    </h5>
-                                    <span class="price">
-                                        <i class="bi bi-tag-fill"></i> 195 000 kr
-                                    </span>
-                                    <ul class="facilities-list clearfix">
-                                        <li><i class="bi bi-speedometer2"></i> 12,400 km</li>
-                                        <li><i class="bi bi-gear"></i> Automat</li>
-                                        <li><i class="bi bi-calendar3"></i> 2021</li>
-                                        <li><i class="bi bi-fuel-pump"></i> Bensin</li>
-                                        <li><i class="bi bi-car-front"></i> Sport</li>
-                                        <li><i class="bi bi-paint-bucket"></i> Röd</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <script>
-                        var images3 = ["images/car-4.jpg", "images/hidden-4.jpg"]; // lista med bildsökvägar
-                        var currentImageIndex3 = 0;
-                        var carImage3 = document.getElementById('carImage3');
-
-                        function changeImage3(direction, event) {
-                            event.preventDefault(); // Förhindra standardbeteendet för länken
-                            currentImageIndex3 += direction;
-                            if (currentImageIndex3 < 0) {
-                                currentImageIndex3 = images3.length - 1;
-                            } else if (currentImageIndex3 >= images3.length) {
-                                currentImageIndex3 = 0;
-                            }
-                            carImage3.src = images3[currentImageIndex3];
-                        }
-                    </script>
-
-
-                    <!-- third car on website stop-->
-                    <!-- fourth car on website start-->
-                    <div class="car-box-2">
-                        <div class="row g-0">
-                            <div class="col-lg-5 col-md-5">
-                                <div class="car-thumbnail">
-                                    <div class="image-container">
-                                        <img class="d-block w-100" id="carImage4" src="images/car-3.jpg" alt="car">
-                                        <a href="#" class="prev" onclick="changeImage4(-1, event)">&#10094;</a>
-                                        <a href="#" class="next" onclick="changeImage4(1, event)">&#10095;</a>
-                                    </div>
-                                </div>
-                                <div class="carbox-overlap-wrapper">
-                                    <div class="overlap-box">
-                                        <div class="overlap-btns-area">
-                                            <a class="overlap-btn" data-bs-toggle="modal" data-bs-target="#carOverviewModal">
-                                                <i class="fa fa-eye-slash"></i>
-                                            </a>
-                                            <a class="overlap-btn wishlist-btn">
-                                                <i class="fa fa-heart-o"></i>
-                                            </a>
-                                            <a class="overlap-btn compare-btn">
-                                                <i class="fa fa-balance-scale"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-7 col-md-7 align-self-center">
-                                <div class="detail">
-                                    <h5 class="title">
-                                        <a href="car-details.html">Fiat 500g</a>
-                                    </h5>
-                                    <span class="price">
-                                        <i class="bi bi-tag-fill"></i> 60 000 kr
-                                    </span>
-                                    <ul class="facilities-list clearfix">
-                                        <li><i class="bi bi-speedometer2"></i> 12,400 km</li>
-                                        <li><i class="bi bi-gear"></i> Automat</li>
-                                        <li><i class="bi bi-calendar3"></i> 2021</li>
-                                        <li><i class="bi bi-fuel-pump"></i> Bensin</li>
-                                        <li><i class="bi bi-car-front"></i> Sport</li>
-                                        <li><i class="bi bi-paint-bucket"></i> Röd</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <script>
-                        var images4 = ["images/car-3.jpg", "images/hidden-10.jpg"]; // lista med bildsökvägar
-                        var currentImageIndex4 = 0;
-                        var carImage4 = document.getElementById('carImage4');
-
-                        function changeImage4(direction, event) {
-                            event.preventDefault(); // Förhindra standardbeteendet för länken
-                            currentImageIndex4 += direction;
-                            if (currentImageIndex4 < 0) {
-                                currentImageIndex4 = images4.length - 1;
-                            } else if (currentImageIndex4 >= images4.length) {
-                                currentImageIndex4 = 0;
-                            }
-                            carImage4.src = images4[currentImageIndex4];
-                        }
-                    </script>
-                    <!-- fourth car on website stop-->
-                    <!-- fifth car on website start-->
-                    <div class="car-box-2">
-                        <div class="row g-0">
-                            <div class="col-lg-5 col-md-5">
-                                <div class="car-thumbnail">
-                                    <div class="image-container">
-                                        <img class="d-block w-100" id="carImage5" src="images/car-1.jpg" alt="car">
-                                        <a href="#" class="prev" onclick="changeImage5(-1, event)">&#10094;</a>
-                                        <a href="#" class="next" onclick="changeImage5(1, event)">&#10095;</a>
-                                    </div>
-                                </div>
-                                <div class="carbox-overlap-wrapper">
-                                    <div class="overlap-box">
-                                        <div class="overlap-btns-area">
-                                            <a class="overlap-btn" data-bs-toggle="modal" data-bs-target="#carOverviewModal">
-                                                <i class="fa fa-eye-slash"></i>
-                                            </a>
-                                            <a class="overlap-btn wishlist-btn">
-                                                <i class="fa fa-heart-o"></i>
-                                            </a>
-                                            <a class="overlap-btn compare-btn">
-                                                <i class="fa fa-balance-scale"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-7 col-md-7 align-self-center">
-                                <div class="detail">
-                                    <h5 class="title">
-                                        <a href="car-details.html">Classic MG Racer</a>
-                                    </h5>
-                                    <span class="price">
-                                        <i class="bi bi-tag-fill"></i> 900 000 kr
-                                    </span>
-                                    <ul class="facilities-list clearfix">
-                                        <li><i class="bi bi-speedometer2"></i> 12,400 km</li>
-                                        <li><i class="bi bi-gear"></i> Automat</li>
-                                        <li><i class="bi bi-calendar3"></i> 2021</li>
-                                        <li><i class="bi bi-fuel-pump"></i> Bensin</li>
-                                        <li><i class="bi bi-car-front"></i> Sport</li>
-                                        <li><i class="bi bi-paint-bucket"></i> Röd</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <script>
-                        var images5 = ["images/car-1.jpg", "images/hidden-9.jpg"]; // list of image paths
-                        var currentImageIndex5 = 0;
-                        var carImage5 = document.getElementById('carImage5');
-
-                        function changeImage5(direction, event) {
-                            event.preventDefault(); // Prevent the default behavior of the anchor tag
-                            currentImageIndex5 += direction;
-                            if (currentImageIndex5 < 0) {
-                                currentImageIndex5 = images5.length - 1;
-                            } else if (currentImageIndex5 >= images5.length) {
-                                currentImageIndex5 = 0;
-                            }
-                            carImage5.src = images5[currentImageIndex5];
-                        }
-                    </script>
-
                 </div> <!--Alla car boxes måste ligga innan den här slut diven -->
             </div>
         </div>

@@ -1,7 +1,7 @@
 ﻿@if (LinkOption is not null)
 {
         <label class="btn btn-link text-start text-decoration-none" style="color: black; text-decoration: none; padding: 0; display:block;">
-            <input type="radio" name="carCategory" @bind="LinkOption.IsSelected" @onclick="OnClick" />
+        <input type="radio" name="carCategory" @bind="LinkOption.IsSelected" @onclick="OnClick" checked="@LinkOption.IsSelected" />
             @LinkOption?.Name
         </label>
 }
